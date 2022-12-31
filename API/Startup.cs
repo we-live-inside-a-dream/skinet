@@ -22,7 +22,6 @@ namespace API
         public Startup(IConfiguration config)
         {
             _config = config;
-
         }
 
 
@@ -31,7 +30,8 @@ namespace API
         {
 
             services.AddControllers();
-            services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")))
+            services.AddDbContext<StoreContext>(x =>
+                 x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
