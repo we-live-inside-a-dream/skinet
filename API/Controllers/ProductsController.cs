@@ -23,7 +23,11 @@ namespace API.Controllers
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
             var products = await _context.Products.ToListAsync();
+            // foreach (Product product in products)
+            // {
+            //     Console.WriteLine("this is products", product.Id);
 
+            // }
             return Ok(products);
         }
 
